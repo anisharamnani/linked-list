@@ -5,7 +5,7 @@ class LinkedList
 
   attr_accessor :first_node
 
-  def initialize(node=false)
+  def initialize(node=nil)
     @first_node = node
   end
 
@@ -34,12 +34,11 @@ class LinkedList
     end
   end
 
-  def delete(node)
+  def delete(value)
     current_node = @first_node
     next_node = @first_node.next_node
-    binding.pry
     while next_node
-      if next_node == node
+      if next_node.value == value
         link(current_node, next_node.next_node)
         next_node.next_node = nil
         break

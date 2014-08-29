@@ -10,7 +10,7 @@ describe "LinkedList" do
   describe "#initialize" do
     context "when there is NOT a given first node" do
       it "sets the first node value to false" do
-        linked_list.first_node.should == false
+        linked_list.first_node.should == nil
       end
     end
 
@@ -54,7 +54,7 @@ describe "LinkedList" do
       node_1 = linked_list_with_node.find(value_1)
       node_2 = linked_list_with_node.find(value_2)
       
-      linked_list_with_node.delete(node_1)
+      linked_list_with_node.delete(value_1)
       linked_list_with_node.first_node.next_node.should == node_2
     end
   end
